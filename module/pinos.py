@@ -36,7 +36,7 @@ class PinoControle(PinosGPIO):
         try:
             with open(PINOS_YML) as file_data:
                 self.pins = yaml.safe_load(file_data)
-        except Exception e:
+        except Exception as e:
             print e
 
     def pino_response(self, numero, config):
@@ -51,7 +51,7 @@ class PinoControle(PinosGPIO):
             if resistor:
                 output['resistor'] = resistor
             return output
-        except Exception e:
+        except Exception as e:
             print e
             
     def atualiza(self, numero, valor):
@@ -61,7 +61,7 @@ class PinoControle(PinosGPIO):
             self.gpio.output(pino_numero, valor)
             estado = self.gpio.input(pino_numero)
             return estado
-        except Exception e:
+        except Exception as e:
             print e
             
     def estado(self, numero):
@@ -69,7 +69,7 @@ class PinoControle(PinosGPIO):
         try:
             estado = self.gpio.input(pino_numero)
             return estado
-        except Exception e:
+        except Exception as e:
             print e
         
     def ler(self, numero):
@@ -85,7 +85,7 @@ class PinoControle(PinosGPIO):
                 print pino_config['nome']
             pino_habilitado = self.pino_response(pino_numero, pino_config)
             return pino_habilitado
-        except Exception e:
+        except Exception as e:
             print e
 			
     def entrada(self):

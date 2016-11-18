@@ -343,4 +343,5 @@ class MFRC522(object):
             
     def fecha_spi(self):
         spi.closeSPI()
+        print "SPI closed!"
 		

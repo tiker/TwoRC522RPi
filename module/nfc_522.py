@@ -51,7 +51,7 @@ class Nfc522(object):
                         else:
                             self.pc.atualiza(self.RST2, self.pc.baixo())
                             return None
-        except Exception e:
+        except Exception as e:
             print e
         finally:
             self.MIFAREReader.fecha_spi()
@@ -71,6 +71,6 @@ class Nfc522(object):
 					return None
 			tag_hexa = ''.join([str(hex(x)[2:4]).zfill(2) for x in uid[:-1][::-1]]) #Returns in hexadecimal
 			return int(tag_hexa.upper(), 16) #Returns in decimal
-        except Exception e:
+        except Exception as e:
             print e
 			

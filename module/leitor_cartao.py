@@ -27,15 +27,17 @@ class LeitorCartao(threading.Thread):
     
     def __init__(self, intervalo=0.2):
         threading.Thread.__init__(self)
-        self.intervalo = intervalo
+        self._stopevent = threading.Event()
+        self._sleepperiod = intervalo
         self.name = 'Thread LeitorCartao'
         
     def run(self):
         print "%s. Run... " % self.name
-        while True:
+        while not self._stopevent.isSet():
             self.ler()
-            sleep(self.intervalo)
-            
+            self._stopevent.wait(self._sleepperiod)
+        print "%s.Turning off..." % (self.getName(),)
+        
     def obtem_numero_cartao_rfid(self):
         id = None
         try:
@@ -53,7 +55,7 @@ class LeitorCartao(threading.Thread):
                         return None
                 else:
                     return id
-        except Exception e:
+        except Exception as e:
             print e
             
     def ler(self):
@@ -62,12 +64,12 @@ class LeitorCartao(threading.Thread):
                 self.valida_cartao(self.numero_cartao)
             else:
                 return None
-        except Exception e:
+        except Exception as e:
             print e
-        
+            
     def valida_cartao(self, numero):
-		try:
-			print "I make interesting operations here with the tag:" str(numero)
-        except Exception e:
+        try:
+            print "I make interesting operations here with the tag:" + str(numero)
+        except Exception as e:
             print e
 			
