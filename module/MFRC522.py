@@ -7,7 +7,7 @@ This class requires SPI-Py for Python installed from the repository:
 https://github.com/lthiery/SPI-Py. - MontaVista Software, Inc., Anton Vorontsov(2007)
 Repository of the original class: https://github.com/mxgxw/MFRC522-python. - Mario Gómez
 
-Credits and License: Created by Mario Gómez, adapted by Erivando Sena(2016)
+Credits and License: Created by Miguel Balboa, adapted by Erivando Sena(2016)
 
 Connector GPIO Pins (J8)
 | #Name| #Pin  | #GPIO      |
@@ -32,7 +32,7 @@ import time
 from module.pinos import PinoControle
 
 __author__ = "Erivando Sena Ramos (Adaptations)"
-__copyright__ = "MontaVista Software, Inc."
+__copyright__ = "Miguel Balboa (2012)"
 __email__ = "erivandoramos@bol.com.br"
 __status__ = "Prototype"
 
