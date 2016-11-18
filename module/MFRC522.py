@@ -10,15 +10,15 @@ Repository of the original class: https://github.com/mxgxw/MFRC522-python. - Mar
 Credits and License: Created by Mario Gómez, adapted by Erivando Sena(2016)
 
 Connector GPIO Pins (J8)
-| #Nome| #Pino | #GPIO      |
+| #Name| #Pin  | #GPIO      |
 |------|-------|------------|
-| SDA  | 24    | GPIO 8     |
+| SDA  | 26/24 | GPIO 7/8   |
 | SCK  | 23    | GPIO 11    |
 | MOSI | 19    | GPIO 10    |
 | MISO | 21    | GPIO 9     |
 | IRQ  | None  | None       |
 | GND  | Gnd   | Gnd        |
-| RST  | 15    | GPIO 22/27 |
+| RST  | 15/13 | GPIO 22/27 |
 | 3.3V | 1     | 3V3        |
 
  * This program is free software; you can redistribute it and/or modify
